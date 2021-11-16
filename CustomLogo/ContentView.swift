@@ -12,59 +12,16 @@ struct ContentView: View {
         GeometryReader { geometry in
             let x = geometry.size.width
             let y = geometry.size.height
-
-            Path { path in
-                path.move(to: CGPoint(x: x / 2, y: 0))
-                path.addLine(to: CGPoint(x: x, y: 200))
-                path.addLine(to: CGPoint(x: 0, y: y))
-                path.addLine(to: CGPoint(x: x/2, y: 0))
-                path.closeSubpath()
-            }
-            .stroke(lineWidth: 5)
             
-            curve
-            curve
-                .rotationEffect(.degrees(180))
-                .offset(y: y - 170)
-            circle
-            
-        }
-        .foregroundColor(.green)
-
-    }
-
-    private var curve: some View {
-        GeometryReader { geometry in
-            let x = geometry.size.width
-            let y = geometry.size.height
-            
-            Path { path in
-                path.move(to: CGPoint(x: x/4.5, y: y/1.75))
-                path.addQuadCurve(
-                    to: CGPoint(x: x - x/4.5, y: y/1.75),
-                    control: CGPoint(x: x/2, y: y/4))
-            }
-            .stroke(lineWidth: 5)
-        }
-    }
-    
-    private var circle: some View {
-        GeometryReader { geometry in
-            let x = geometry.size.width
-            let y = geometry.size.height
-            
-            Path { path in
-                path.move(to: CGPoint(x: x/2, y: 0))
-                path.addQuadCurve(
-                    to: CGPoint(x: x, y: y/2),
-                    control: CGPoint(x: x, y: 0)
-                )
-                path.addQuadCurve(
-                    to: CGPoint(x: x/2, y: y),
-                    control: CGPoint(x: x, y: y)
-                )
+            ZStack {
+                CustomCircle()
+                    .stroke(lineWidth: 5)
+                CustomCircle()
+                    .frame(width: x - 15)
+//                TringleStar(starCount: 10)    
             }
         }
+        .frame(width: 200, height: 200)
     }
 }
 
@@ -75,12 +32,70 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct MyShape : Shape {
-    func path(in rect: CGRect) -> Path {
-        var p = Path()
-
-        p.addArc(center: CGPoint(x: 100, y:100), radius: 50, startAngle: .degrees(0), endAngle: .degrees(90), clockwise: true)
-
-        return p.strokedPath(.init(lineWidth: 3, dash: [5, 3], dashPhase: 10))
+struct CustomTringle: View {
+    var body: some View {
+        GeometryReader { geo in
+            let minX: CGFloat = 0
+            let maxX = geo.size.width
+            let midX = maxX / 2
+            
+            let minY: CGFloat = 0
+            let maxY = geo.size.height
+            
+            Path { path in
+                path.move(to: CGPoint(x: midX, y: minY))
+                path.addLine(to: CGPoint(x: minX, y: maxY))
+                path.addLine(to: CGPoint(x: maxX, y: maxY))
+                path.addLine(to: CGPoint(x: midX, y: minY))
+                path.closeSubpath()
+            }
+        }
     }
 }
+
+struct CustomCircle: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        path.addArc(center: CGPoint(x: rect.midX, y: rect.midY),
+                    radius: rect.width / 2,
+                    startAngle: .degrees(0),
+                    endAngle: .degrees(360),
+                    clockwise: true)
+
+        return path
+    }
+}
+
+struct Curve: View {
+    var from: CGPoint
+    var to: CGPoint
+    var force: CGPoint
+    
+    var body: some View {
+        Path { path in
+            path.move(to: from)
+            path.addQuadCurve(to: to, control: force)
+        }
+    }
+}
+
+//struct TringleStar: View {
+//    var starCount: Int
+//
+//    var body: some View {
+//        GeometryReader { geometry in
+//            let x = geometry.size.width
+//            let y = geometry.size.height
+//
+//            ForEach(1..<starCount) { index in
+//                Group {
+//                    CustomTringle()
+//                        .frame(width: y/15, height: x/2.5)
+//                        .position(x: x/2, y: y/4)
+//                        .foregroundColor(.red)
+//                        .rotationEffect(.degrees(Double(index) / Double(starCount)))
+//                }
+//            }
+//        }
+//    }
+//}
