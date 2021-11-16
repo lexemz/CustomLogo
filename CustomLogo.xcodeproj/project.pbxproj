@@ -11,6 +11,8 @@
 		786C2913274436AE0050F854 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786C2912274436AE0050F854 /* ContentView.swift */; };
 		786C2915274436B00050F854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 786C2914274436B00050F854 /* Assets.xcassets */; };
 		786C2918274436B00050F854 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 786C2917274436B00050F854 /* Preview Assets.xcassets */; };
+		786C291F27445DB80050F854 /* ElementaryFigures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786C291E27445DB80050F854 /* ElementaryFigures.swift */; };
+		786C292127445E3E0050F854 /* TringleStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786C292027445E3E0050F854 /* TringleStar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		786C2912274436AE0050F854 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		786C2914274436B00050F854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		786C2917274436B00050F854 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		786C291E27445DB80050F854 /* ElementaryFigures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementaryFigures.swift; sourceTree = "<group>"; };
+		786C292027445E3E0050F854 /* TringleStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TringleStar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +57,10 @@
 			children = (
 				786C2910274436AE0050F854 /* CustomLogoApp.swift */,
 				786C2912274436AE0050F854 /* ContentView.swift */,
+				786C291E27445DB80050F854 /* ElementaryFigures.swift */,
 				786C2914274436B00050F854 /* Assets.xcassets */,
 				786C2916274436B00050F854 /* Preview Content */,
+				786C292027445E3E0050F854 /* TringleStar.swift */,
 			);
 			path = CustomLogo;
 			sourceTree = "<group>";
@@ -139,6 +145,8 @@
 			files = (
 				786C2913274436AE0050F854 /* ContentView.swift in Sources */,
 				786C2911274436AE0050F854 /* CustomLogoApp.swift in Sources */,
+				786C291F27445DB80050F854 /* ElementaryFigures.swift in Sources */,
+				786C292127445E3E0050F854 /* TringleStar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
