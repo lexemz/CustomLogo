@@ -28,8 +28,7 @@ struct ContentView: View {
                     CustomTringle()
                         .stroke(lineWidth: 4)
                         .frame(width: x * 0.90, height: y * 0.90)
-                    CustomTringle()
-                        .stroke(lineWidth: 4)
+                    TringleEye()
                         .frame(width: x * 0.75, height: y * 0.75)
                         .offset(y: y * 0.03)
                 }
