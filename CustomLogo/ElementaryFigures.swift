@@ -7,27 +7,17 @@
 
 import SwiftUI
 
-struct CustomTringle: View {
-    let angle: Angle
-    
-    var body: some View {
-        GeometryReader { geo in
-            let minX: CGFloat = 0
-            let maxX = geo.size.width
-            let midX = maxX / 2
-            
-            let minY: CGFloat = 0
-            let maxY = geo.size.height
-            
-            Path { path in
-                path.move(to: CGPoint(x: midX, y: minY))
-                path.addLine(to: CGPoint(x: minX, y: maxY))
-                path.addLine(to: CGPoint(x: maxX, y: maxY))
-                path.addLine(to: CGPoint(x: midX, y: minY))
-                path.closeSubpath()
-            }
-        }
-        .rotationEffect(angle, anchor: .bottom)
+struct CustomTringle: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        
+        path.move(to: CGPoint(x: rect.midX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.midX, y: rect.minY))
+        path.closeSubpath()
+        
+        return path
     }
 }
 
@@ -61,7 +51,7 @@ struct ElementaryFigures_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             CustomCircle()
-            CustomTringle(angle: .degrees(0))
+            CustomTringle()
         }
     }
 }

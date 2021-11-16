@@ -15,12 +15,28 @@ struct ContentView: View {
             
             ZStack {
                 CustomCircle()
-                    .stroke(lineWidth: 5)
+                    .stroke(lineWidth: 4)
                 CustomCircle()
-                    .frame(width: x - 15)
+                    .frame(width: x * 0.95, height: y * 0.95)
+                TringleStar(starCount: 30, bold: 15)
+                    .foregroundColor(.white)
+                    .frame(width: x * 0.90, height: y * 0.90)
+                Group {
+                    CustomTringle()
+                        .foregroundColor(.white)
+                        .frame(width: x * 0.90, height: y * 0.90)
+                    CustomTringle()
+                        .stroke(lineWidth: 4)
+                        .frame(width: x * 0.90, height: y * 0.90)
+                    CustomTringle()
+                        .stroke(lineWidth: 4)
+                        .frame(width: x * 0.75, height: y * 0.75)
+                        .offset(y: y * 0.03)
+                }
+                .offset(y: y * -0.115)
             }
+            .frame(width: 200, height: 200)
         }
-        .frame(width: 200, height: 200)
     }
 }
 
