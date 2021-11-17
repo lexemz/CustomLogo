@@ -18,9 +18,9 @@ struct ContentView: View {
                     .stroke(lineWidth: 4)
                 CustomCircle()
                     .frame(width: x * 0.95, height: y * 0.95)
-                TringleStar(starCount: 30, bold: 15)
+                TringleStar(starCount: 40, bold: 15)
                     .foregroundColor(.white)
-                    .frame(width: x * 0.90, height: y * 0.90)
+                    .frame(width: x * 0.95, height: y * 0.95)
                 Group {
                     CustomTringle()
                         .foregroundColor(.white)
@@ -31,11 +31,15 @@ struct ContentView: View {
                     TringleEye()
                         .frame(width: x * 0.75, height: y * 0.75)
                         .offset(y: y * 0.03)
+                    Eyeball()
+                        .frame(width: x * 0.23, height: y * 0.23)
+                        .position(x: x * 0.5, y: y * 0.65)
                 }
                 .offset(y: y * -0.115)
             }
             .frame(width: 200, height: 200)
         }
+        .foregroundColor(Color(red: 71.0/255.0, green: 106.0/255.0, blue: 74.0/255.0))
     }
 }
 

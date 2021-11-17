@@ -14,6 +14,7 @@
 		786C291F27445DB80050F854 /* ElementaryFigures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786C291E27445DB80050F854 /* ElementaryFigures.swift */; };
 		786C292127445E3E0050F854 /* TringleStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786C292027445E3E0050F854 /* TringleStar.swift */; };
 		786C292327446A080050F854 /* TringleEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786C292227446A080050F854 /* TringleEye.swift */; };
+		7885529527447A27006C7BBF /* Eyeball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7885529427447A27006C7BBF /* Eyeball.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		786C291E27445DB80050F854 /* ElementaryFigures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementaryFigures.swift; sourceTree = "<group>"; };
 		786C292027445E3E0050F854 /* TringleStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TringleStar.swift; sourceTree = "<group>"; };
 		786C292227446A080050F854 /* TringleEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TringleEye.swift; sourceTree = "<group>"; };
+		7885529427447A27006C7BBF /* Eyeball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eyeball.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			children = (
 				786C2910274436AE0050F854 /* CustomLogoApp.swift */,
 				786C2912274436AE0050F854 /* ContentView.swift */,
+				7885529427447A27006C7BBF /* Eyeball.swift */,
 				786C292227446A080050F854 /* TringleEye.swift */,
 				786C292027445E3E0050F854 /* TringleStar.swift */,
 				786C291E27445DB80050F854 /* ElementaryFigures.swift */,
@@ -150,6 +153,7 @@
 				786C2911274436AE0050F854 /* CustomLogoApp.swift in Sources */,
 				786C292327446A080050F854 /* TringleEye.swift in Sources */,
 				786C291F27445DB80050F854 /* ElementaryFigures.swift in Sources */,
+				7885529527447A27006C7BBF /* Eyeball.swift in Sources */,
 				786C292127445E3E0050F854 /* TringleStar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
