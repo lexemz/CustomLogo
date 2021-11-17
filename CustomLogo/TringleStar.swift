@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct TringleStar: View {
-    var starCount: Int
-    var bold: CGFloat
+    let starCount: Int
+    let bold: CGFloat
 
     var body: some View {
         GeometryReader { geometry in
