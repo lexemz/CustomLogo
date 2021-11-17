@@ -18,12 +18,11 @@ struct IlluminateLogo: View {
             ZStack {
                 if isPresented {
                     IlluminateCircle(x: x, y: y)
-                        .transition(.springAnimationWithOpacityRemoval(delay: 0.3, removalDelay: 0))
+                        .transition(.springAnimationWithOpacityRemoval(delay: 0.3))
                 }
                 if isPresented {
                     IlluminateTringle(x: x, y: y)
-                        .transition(.springAnimationWithOpacityRemoval(delay: 0, removalDelay: 0.1))
-                    
+                        .transition(.springAnimationWithOpacityRemoval(delay: 0))
                 }
             }
         }
@@ -39,19 +38,19 @@ struct IlluminateLogo_Previews: PreviewProvider {
 }
 
 extension AnyTransition {
-    static func springAnimationWithOpacityRemoval(delay: Double, removalDelay: Double) -> AnyTransition {
+    static func springAnimationWithOpacityRemoval(delay: Double) -> AnyTransition {
         let animateionForInsertion = Animation.interactiveSpring(
             response: 0.45,
             dampingFraction: 0.55,
             blendDuration: 1
         )
-            .delay(delay)
-        
+        .delay(delay)
+
         let insertion = AnyTransition.scale
             .animation(animateionForInsertion)
 
         let removal = AnyTransition.opacity
-            .animation(.default.delay(removalDelay))
+            .animation(.default)
 
         return .asymmetric(insertion: insertion, removal: removal)
     }
