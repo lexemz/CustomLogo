@@ -14,11 +14,8 @@ struct ContentView: View {
         VStack {
             Spacer()
 
-            if showIlluminate {
-                IlluminateLogo()
-                    .frame(width: 250, height: 250)
-                    .transition(.customAnimation)
-            }
+            IlluminateLogo(isPresented: $showIlluminate)
+                .frame(width: 250, height: 250)
 
             Spacer()
             Button(action: buttonAction) {
@@ -42,11 +39,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
-}
-
-extension AnyTransition {
-    static var customAnimation: AnyTransition {
-        return .asymmetric(insertion: .scale, removal: .opacity)
     }
 }
