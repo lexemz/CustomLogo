@@ -12,42 +12,22 @@ struct IlluminateLogo: View {
 
     var body: some View {
         GeometryReader { geometry in
-            if isPresented {
-                let x = geometry.size.width
-                let y = geometry.size.height
+            let x = geometry.size.width
+            let y = geometry.size.height
 
-                ZStack {
-                    Group {
-                        CustomCircle()
-                            .stroke(lineWidth: 4)
-                        CustomCircle()
-                            .frame(width: x * 0.95, height: y * 0.95)
-                        TringleStar(starCount: 40, bold: 15)
-                            .foregroundColor(.white)
-                            .frame(width: x * 0.95, height: y * 0.95)
-                    }
-                    Group {
-                        ZStack {
-                            CustomTringle()
-                                .foregroundColor(.white)
-                                .frame(width: x * 0.90, height: y * 0.90)
-                            CustomTringle()
-                                .stroke(lineWidth: 4)
-                                .frame(width: x * 0.90, height: y * 0.90)
-                            TringleEye()
-                                .frame(width: x * 0.75, height: y * 0.75)
-                                .position(x: x * 0.5, y: y * 0.526)
-                            Eyeball()
-                                .frame(width: x * 0.23, height: y * 0.23)
-                                .position(x: x * 0.5, y: y * 0.65)
-                        }
-                        .offset(y: y * -0.115)
-                    }
+            ZStack {
+                if isPresented {
+                    IlluminateCircle(x: x, y: y)
+                        .transition(.springAnimationWithOpacityRemoval(delay: 0.3, removalDelay: 0))
                 }
-                .transition(.springAnimationWithOpacityRemoval)
-                .foregroundColor(Color(red: 71.0/255.0, green: 106.0/255.0, blue: 74.0/255.0))
+                if isPresented {
+                    IlluminateTringle(x: x, y: y)
+                        .transition(.springAnimationWithOpacityRemoval(delay: 0, removalDelay: 0.1))
+                    
+                }
             }
         }
+        .foregroundColor(Color(red: 71.0/255.0, green: 106.0/255.0, blue: 74.0/255.0))
     }
 }
 
@@ -59,15 +39,62 @@ struct IlluminateLogo_Previews: PreviewProvider {
 }
 
 extension AnyTransition {
-    static var springAnimationWithOpacityRemoval: AnyTransition {
+    static func springAnimationWithOpacityRemoval(delay: Double, removalDelay: Double) -> AnyTransition {
+        let animateionForInsertion = Animation.interactiveSpring(
+            response: 0.45,
+            dampingFraction: 0.55,
+            blendDuration: 1
+        )
+            .delay(delay)
+        
         let insertion = AnyTransition.scale
-            .animation(Animation.interactiveSpring(
-                response: 0.45,
-                dampingFraction: 0.55,
-                blendDuration: 1))
+            .animation(animateionForInsertion)
 
         let removal = AnyTransition.opacity
+            .animation(.default.delay(removalDelay))
 
         return .asymmetric(insertion: insertion, removal: removal)
+    }
+}
+
+struct IlluminateTringle: View {
+    let x: Double
+    let y: Double
+
+    var body: some View {
+        Group {
+            ZStack {
+                CustomTringle()
+                    .foregroundColor(.white)
+                    .frame(width: x * 0.90, height: y * 0.90)
+                CustomTringle()
+                    .stroke(lineWidth: 4)
+                    .frame(width: x * 0.90, height: y * 0.90)
+                TringleEye()
+                    .frame(width: x * 0.75, height: y * 0.75)
+                    .position(x: x * 0.5, y: y * 0.526)
+                Eyeball()
+                    .frame(width: x * 0.23, height: y * 0.23)
+                    .position(x: x * 0.5, y: y * 0.65)
+            }
+            .offset(y: y * -0.115)
+        }
+    }
+}
+
+struct IlluminateCircle: View {
+    let x: Double
+    let y: Double
+
+    var body: some View {
+        Group {
+            CustomCircle()
+                .stroke(lineWidth: 4)
+            CustomCircle()
+                .frame(width: x * 0.95, height: y * 0.95)
+            TringleStar(starCount: 40, bold: 15)
+                .foregroundColor(.white)
+                .frame(width: x * 0.95, height: y * 0.95)
+        }
     }
 }
