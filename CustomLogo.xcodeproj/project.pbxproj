@@ -63,11 +63,7 @@
 			children = (
 				786C2910274436AE0050F854 /* CustomLogoApp.swift */,
 				786C2912274436AE0050F854 /* ContentView.swift */,
-				7885529627447DC1006C7BBF /* IlluminateLogo.swift */,
-				7885529427447A27006C7BBF /* Eyeball.swift */,
-				786C292227446A080050F854 /* TringleEye.swift */,
-				786C292027445E3E0050F854 /* TringleStar.swift */,
-				786C291E27445DB80050F854 /* ElementaryFigures.swift */,
+				78855298274484C0006C7BBF /* Logo */,
 				786C2914274436B00050F854 /* Assets.xcassets */,
 				786C2916274436B00050F854 /* Preview Content */,
 			);
@@ -80,6 +76,18 @@
 				786C2917274436B00050F854 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		78855298274484C0006C7BBF /* Logo */ = {
+			isa = PBXGroup;
+			children = (
+				7885529627447DC1006C7BBF /* IlluminateLogo.swift */,
+				7885529427447A27006C7BBF /* Eyeball.swift */,
+				786C292227446A080050F854 /* TringleEye.swift */,
+				786C292027445E3E0050F854 /* TringleStar.swift */,
+				786C291E27445DB80050F854 /* ElementaryFigures.swift */,
+			);
+			path = Logo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
