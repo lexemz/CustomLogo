@@ -34,19 +34,6 @@ struct CustomCircle: Shape {
     }
 }
 
-//struct Curve: View {
-//    var from: CGPoint
-//    var to: CGPoint
-//    var force: CGPoint
-//
-//    var body: some View {
-//        Path { path in
-//            path.move(to: from)
-//            path.addQuadCurve(to: to, control: force)
-//        }
-//    }
-//}
-
 struct ElementaryFigures_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
@@ -57,9 +44,9 @@ struct ElementaryFigures_Previews: PreviewProvider {
 }
 
 struct Curve: Shape {
-    var from: CGPoint
-    var to: CGPoint
-    var force: CGPoint
+    let from: CGPoint
+    let to: CGPoint
+    let force: CGPoint
     
     func path(in rect: CGRect) -> Path {
         var path = Path()

@@ -9,17 +9,12 @@ import SwiftUI
 
 struct TringleEye: View {
     var body: some View {
-        GeometryReader { geometry in
-            let x = geometry.size.width
-            let y = geometry.size.height
-
-            ZStack {
-                CustomTringle()
-                    .stroke(lineWidth: 4)
-                EyeBorder()
-                UpSideWavesAroundEye()
-                DownSideWavesAroundEye()
-            }
+        ZStack {
+            CustomTringle()
+                .stroke(lineWidth: 4)
+            EyeBorder()
+            UpSideWavesAroundEye()
+            DownSideWavesAroundEye()
         }
     }
 }
@@ -31,7 +26,7 @@ struct TringleEye_Previews: PreviewProvider {
     }
 }
 
-struct UpBorder: View {
+struct ReuseUpBorder: View {
     var body: some View {
         GeometryReader { geometry in
             let x = geometry.size.width
@@ -53,10 +48,9 @@ struct EyeBorder: View {
     var body: some View {
         GeometryReader { geometry in
             let y = geometry.size.height
-            let x = geometry.size.width
 
-            UpBorder()
-            UpBorder()
+            ReuseUpBorder()
+            ReuseUpBorder()
                 .rotationEffect(.degrees(180))
                 .offset(y: y * 0.33)
         }
@@ -67,23 +61,22 @@ struct UpSideWavesAroundEye: View {
     var body: some View {
         GeometryReader { geometry in
             let y = geometry.size.height
-            let x = geometry.size.width
-
-            UpBorder()
+            
+            ReuseUpBorder()
                 .offset(y: y * -0.06)
-            UpBorder()
+            ReuseUpBorder()
                 .offset(y: y * -0.12)
-            UpBorder()
+            ReuseUpBorder()
                 .offset(y: y * -0.18)
-            UpBorder()
+            ReuseUpBorder()
                 .offset(y: y * -0.24)
-            UpBorder()
+            ReuseUpBorder()
                 .offset(y: y * -0.30)
-            UpBorder()
+            ReuseUpBorder()
                 .offset(y: y * -0.36)
-            UpBorder()
+            ReuseUpBorder()
                 .offset(y: y * -0.42)
-            UpBorder()
+            ReuseUpBorder()
                 .offset(y: y * -0.48)
         }
         .clipShape(CustomTringle())
@@ -102,7 +95,7 @@ struct DownSideWavesAroundEye: View {
                 force: CGPoint(x: x/2, y: y * 1.06)
             )
             .stroke(lineWidth: 4)
-            
+
             Curve(
                 from: CGPoint(x: x/9, y: y/1.3),
                 to: CGPoint(x: x - x/9, y: y/1.3),
