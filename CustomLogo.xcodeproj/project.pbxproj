@@ -14,6 +14,8 @@
 		786C291F27445DB80050F854 /* ElementaryFigures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786C291E27445DB80050F854 /* ElementaryFigures.swift */; };
 		786C292127445E3E0050F854 /* TringleStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786C292027445E3E0050F854 /* TringleStar.swift */; };
 		786C292327446A080050F854 /* TringleEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786C292227446A080050F854 /* TringleEye.swift */; };
+		787B7C642745464F006EB5CF /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787B7C632745464F006EB5CF /* SoundManager.swift */; };
+		787B7C6827454C08006EB5CF /* illuminate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 787B7C6727454C08006EB5CF /* illuminate.mp3 */; };
 		7885529527447A27006C7BBF /* Eyeball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7885529427447A27006C7BBF /* Eyeball.swift */; };
 		7885529727447DC1006C7BBF /* IlluminateLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7885529627447DC1006C7BBF /* IlluminateLogo.swift */; };
 /* End PBXBuildFile section */
@@ -27,6 +29,8 @@
 		786C291E27445DB80050F854 /* ElementaryFigures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementaryFigures.swift; sourceTree = "<group>"; };
 		786C292027445E3E0050F854 /* TringleStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TringleStar.swift; sourceTree = "<group>"; };
 		786C292227446A080050F854 /* TringleEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TringleEye.swift; sourceTree = "<group>"; };
+		787B7C632745464F006EB5CF /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		787B7C6727454C08006EB5CF /* illuminate.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = illuminate.mp3; sourceTree = "<group>"; };
 		7885529427447A27006C7BBF /* Eyeball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eyeball.swift; sourceTree = "<group>"; };
 		7885529627447DC1006C7BBF /* IlluminateLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IlluminateLogo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,7 +68,8 @@
 				786C2910274436AE0050F854 /* CustomLogoApp.swift */,
 				786C2912274436AE0050F854 /* ContentView.swift */,
 				78855298274484C0006C7BBF /* Logo */,
-				786C2914274436B00050F854 /* Assets.xcassets */,
+				787B7C6927454D00006EB5CF /* Managers */,
+				787B7C6A27454D10006EB5CF /* Media */,
 				786C2916274436B00050F854 /* Preview Content */,
 			);
 			path = CustomLogo;
@@ -76,6 +81,23 @@
 				786C2917274436B00050F854 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		787B7C6927454D00006EB5CF /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				787B7C632745464F006EB5CF /* SoundManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		787B7C6A27454D10006EB5CF /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				787B7C6727454C08006EB5CF /* illuminate.mp3 */,
+				786C2914274436B00050F854 /* Assets.xcassets */,
+			);
+			path = Media;
 			sourceTree = "<group>";
 		};
 		78855298274484C0006C7BBF /* Logo */ = {
@@ -150,6 +172,7 @@
 			files = (
 				786C2918274436B00050F854 /* Preview Assets.xcassets in Resources */,
 				786C2915274436B00050F854 /* Assets.xcassets in Resources */,
+				787B7C6827454C08006EB5CF /* illuminate.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				786C2913274436AE0050F854 /* ContentView.swift in Sources */,
+				787B7C642745464F006EB5CF /* SoundManager.swift in Sources */,
 				786C2911274436AE0050F854 /* CustomLogoApp.swift in Sources */,
 				7885529727447DC1006C7BBF /* IlluminateLogo.swift in Sources */,
 				786C292327446A080050F854 /* TringleEye.swift in Sources */,

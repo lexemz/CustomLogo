@@ -33,6 +33,9 @@ struct ContentView: View {
         withAnimation {
             showIlluminate.toggle()
         }
+        if showIlluminate {
+            SoundManager.shared.playIlluminateSong()
+        }
     }
 }
 
