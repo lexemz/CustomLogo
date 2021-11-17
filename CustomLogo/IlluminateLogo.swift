@@ -30,14 +30,13 @@ struct IlluminateLogo: View {
                         .frame(width: x * 0.90, height: y * 0.90)
                     TringleEye()
                         .frame(width: x * 0.75, height: y * 0.75)
-                        .offset(y: y * 0.03)
+                        .position(x: x * 0.5, y: y * 0.526)
                     Eyeball()
                         .frame(width: x * 0.23, height: y * 0.23)
                         .position(x: x * 0.5, y: y * 0.65)
                 }
                 .offset(y: y * -0.115)
             }
-            .frame(width: 200, height: 200)
         }
         .foregroundColor(Color(red: 71.0/255.0, green: 106.0/255.0, blue: 74.0/255.0))
     }
